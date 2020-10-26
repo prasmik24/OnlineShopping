@@ -6,35 +6,26 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import com.lti.model.Cateogary;
-import com.lti.model.Product;
-import com.lti.model.User;
 
-public class UserDao {
-	
+public class CateogaryDao {
+
 	EntityManagerFactory emf;
 	EntityManager em;
 	EntityTransaction tx;
 	
-	public UserDao() {
+	public CateogaryDao() {
 		emf = Persistence.createEntityManagerFactory("pu");
 		em = emf.createEntityManager();
 		tx = em.getTransaction();
 	}
 	
-	public void updateUser(User user) {
+	public void addACateogary(Cateogary cateogary)
+	{
 		tx.begin();
-		em.merge(user);
+		em.merge(cateogary);
 		tx.commit();
 	}
-	
-	public User findUser(int userId) {
-		return em.find(User.class, userId);
+	public Cateogary findACateogary(int cateogaryID){
+		return em.find(Cateogary.class, cateogaryID);
 	}
-	
-	public void addUserWithCart(User user) {
-		tx.begin();
-		em.merge(user);
-		tx.commit();
-	}
-	
 }
