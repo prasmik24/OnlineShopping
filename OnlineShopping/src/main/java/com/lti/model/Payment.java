@@ -21,32 +21,39 @@ public class Payment {
 	private int paymentId;
 	private double paymentAmount;
 	private LocalDate paymentDate;
-	
+
 	@OneToOne
 	@JoinColumn(name = "order_Id")
 	private Order order;
-	
+
 	public Order getOrder() {
 		return order;
 	}
+
 	public void setOrder(Order order) {
 		this.order = order;
 	}
+
 	public int getPaymentId() {
 		return paymentId;
 	}
+
 	public void setPaymentId(int paymentId) {
 		this.paymentId = paymentId;
 	}
+
 	public double getPaymentAmount() {
 		return paymentAmount;
 	}
+
 	public void setPaymentAmount(double paymentAmount) {
 		this.paymentAmount = paymentAmount;
 	}
+
 	public LocalDate getPaymentDate() {
 		return paymentDate;
 	}
+
 	public void setPaymentDate(LocalDate paymentDate) {
 		this.paymentDate = paymentDate;
 	}

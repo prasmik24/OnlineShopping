@@ -22,58 +22,64 @@ public class Order {
 	long orderId;
 	LocalDate orderDate;
 	LocalDate deliveryDate;
-	
+
 	@OneToOne
 	@JoinColumn(name = "user_id")
 	User user;
-	
+
 	@OneToOne
 	@JoinColumn(name = "cart_id")
 	Cart cart;
-	
+
 	@OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
 	Payment payment;
-	
-	
+
 	public Payment getPayment() {
 		return payment;
 	}
+
 	public void setPayment(Payment payment) {
 		this.payment = payment;
 	}
+
 	public long getOrderId() {
 		return orderId;
 	}
+
 	public void setOrderId(long orderId) {
 		this.orderId = orderId;
 	}
+
 	public LocalDate getOrderDate() {
 		return orderDate;
 	}
+
 	public void setOrderDate(LocalDate orderDate) {
 		this.orderDate = orderDate;
 	}
+
 	public LocalDate getDeliveryDate() {
 		return deliveryDate;
 	}
+
 	public void setDeliveryDate(LocalDate deliveryDate) {
 		this.deliveryDate = deliveryDate;
 	}
+
 	public User getUser() {
 		return user;
 	}
+
 	public void setUser(User user) {
 		this.user = user;
 	}
+
 	public Cart getCart() {
 		return cart;
 	}
+
 	public void setCart(Cart cart) {
 		this.cart = cart;
 	}
-	
-	
-	
-	
-	
+
 }
