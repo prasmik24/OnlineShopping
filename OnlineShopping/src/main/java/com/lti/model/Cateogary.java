@@ -16,6 +16,8 @@ import javax.persistence.Table;
 @Table(name="tbl_cateogary")
 public class Cateogary {
 	
+	//Category misspelt as Cateogary
+	
 	@Id
 	@SequenceGenerator(name = "catSeq", initialValue = 1001, allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "catSeq")
@@ -23,14 +25,20 @@ public class Cateogary {
 	String cateogaryName;
 	
 	@OneToMany(mappedBy="cateogary",cascade=CascadeType.ALL)
-	List<Product> product;
+	List<Product> products;
 	
 	
 	public List<Product> getProduct() {
-		return product;
+		return products;
 	}
-	public void setProduct(List<Product> product) {
-		this.product = product;
+	public void setProduct(List<Product> products) {
+		this.products = products;
+	}
+	public List<Product> getProducts() {
+		return products;
+	}
+	public void setProducts(List<Product> products) {
+		this.products = products;
 	}
 	public int getCateogaryId() {
 		return cateogaryId;

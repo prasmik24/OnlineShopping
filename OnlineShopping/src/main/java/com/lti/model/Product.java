@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -26,6 +27,20 @@ public class Product {
 	@ManyToOne
 	@JoinColumn(name="cateogary_id")
 	Cateogary cateogary;
+	
+	@ManyToOne
+	@JoinColumn(name="retailer_id")
+	Retailer retailer;
+	
+	
+	public Retailer getRetailer() {
+		return retailer;
+	}
+
+	public void setRetailer(Retailer retailer) {
+		this.retailer = retailer;
+	}
+
 	public int getProductId() {
 		return productId;
 	}
@@ -74,10 +89,6 @@ public class Product {
 	public void setProductManufacturerName(String productManufacturerName) {
 		this.productManufacturerName = productManufacturerName;
 	}
-	
-	
-	
-	
 	
 
 }
