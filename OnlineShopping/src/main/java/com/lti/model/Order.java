@@ -2,6 +2,7 @@ package com.lti.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,7 +31,16 @@ public class Order {
 	@JoinColumn(name = "cart_id")
 	Cart cart;
 	
+	@OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
+	Payment payment;
 	
+	
+	public Payment getPayment() {
+		return payment;
+	}
+	public void setPayment(Payment payment) {
+		this.payment = payment;
+	}
 	public long getOrderId() {
 		return orderId;
 	}
