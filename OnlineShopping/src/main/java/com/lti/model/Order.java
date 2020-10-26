@@ -34,7 +34,6 @@ public class Order {
 	@OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
 	Payment payment;
 
-	
 	public Payment getPayment() {
 		return payment;
 	}
