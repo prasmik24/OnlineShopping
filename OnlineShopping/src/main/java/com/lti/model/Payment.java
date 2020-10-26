@@ -26,6 +26,7 @@ public class Payment {
 	@JoinColumn(name = "order_Id")
 	private Order order;
 
+	
 	public Order getOrder() {
 		return order;
 	}
