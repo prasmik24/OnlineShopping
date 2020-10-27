@@ -25,6 +25,7 @@ public class Retailer {
 	private String retailerName;
 	private String retailerEmail;
 
+	
 	@ManyToOne
 	@JoinColumn(name = "admin_Id")
 	private Admin admin;

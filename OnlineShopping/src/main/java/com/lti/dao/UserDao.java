@@ -23,6 +23,7 @@ public class UserDao {
 		tx.begin();
 		em.merge(user);
 		tx.commit();
+		System.out.println();
 	}
 	
 	public User findUser(int userId) {
