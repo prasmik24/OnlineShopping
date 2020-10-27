@@ -19,13 +19,13 @@ public class CategoryDao {
 		tx = em.getTransaction();
 	}
 	
-	public void addACateogary(Category cateogary)
+	public void addACategory(Category category)
 	{
 		tx.begin();
-		em.merge(cateogary);
+		em.merge(category);
 		tx.commit();
 	}
-	public Category findACateogary(int cateogaryID){
-		return em.find(Category.class, cateogaryID);
+	public Category findACategory(int categoryID){
+		return em.find(Category.class, categoryID);
 	}
 }
