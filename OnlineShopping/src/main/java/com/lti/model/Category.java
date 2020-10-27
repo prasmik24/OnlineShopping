@@ -13,18 +13,17 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="tbl_cateogary")
+@Table(name="tbl_category")
 public class Category {
 	
-	//Category misspelt as Cateogary
 	
 	@Id
 	@SequenceGenerator(name = "catSeq", initialValue = 1001, allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "catSeq")
-	int cateogaryId;
-	String cateogaryName;
+	int categoryId;
+	String categoryName;
 	
-	@OneToMany(mappedBy="cateogary",cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="category",cascade=CascadeType.ALL)
 	List<Product> products;
 	
 	
@@ -40,19 +39,17 @@ public class Category {
 	public void setProducts(List<Product> products) {
 		this.products = products;
 	}
-	public int getCateogaryId() {
-		return cateogaryId;
+	public int getCategoryId() {
+		return categoryId;
 	}
-	public void setCateogaryId(int cateogaryId) {
-		this.cateogaryId = cateogaryId;
+	public void setCategoryId(int categoryId) {
+		this.categoryId = categoryId;
 	}
-	public String getCateogaryName() {
-		return cateogaryName;
+	public String getCategoryName() {
+		return categoryName;
 	}
-	public void setCateogaryName(String cateogaryName) {
-		this.cateogaryName = cateogaryName;
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
 	}
 	
-	
-
 }
