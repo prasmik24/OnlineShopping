@@ -5,6 +5,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import com.lti.model.Category;
 import com.lti.model.Product;
 
 public class ProductDao {
@@ -19,10 +20,10 @@ public class ProductDao {
 		tx = em.getTransaction();
 	}
 	
-	public void addAProductWithCateogary(Product product)
+	public void addAProductWithCateogary(Category category)
 	{
 		tx.begin();
-		em.merge(product);
+		em.merge(category);
 		tx.commit();
 	}
 	public Product findAProduct(int productId)
