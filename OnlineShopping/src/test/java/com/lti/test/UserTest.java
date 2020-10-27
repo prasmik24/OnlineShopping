@@ -16,6 +16,7 @@ public class UserTest {
 
 	@Test
 	public void addUserWithCart() {
+		
 		Cart cart = new Cart();
 		User registerUser = new User();
 		registerUser.setUserName("John");
