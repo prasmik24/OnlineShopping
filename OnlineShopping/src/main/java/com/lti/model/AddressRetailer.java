@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -21,7 +22,8 @@ public class AddressRetailer {
 	private String city;
 	private String state;
 	
-	@OneToOne(mappedBy = "address", cascade = CascadeType.ALL)
+	@OneToOne
+	@JoinColumn(name = "retailer_Id")
 	private Retailer retailer;
 	
 	public Retailer getRetailer() {

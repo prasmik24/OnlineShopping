@@ -28,8 +28,7 @@ public class User {
 	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
 	Order order;
 	
-	@OneToOne
-	@JoinColumn(name = "address_Id")
+	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
 	AddressUser address;
 	
 	public Cart getCart() {

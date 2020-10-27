@@ -29,6 +29,12 @@ public class Retailer {
 	@JoinColumn(name = "admin_Id")
 	private Admin admin;
 
+	@OneToOne(mappedBy = "retailer", cascade = CascadeType.ALL)
+	private AddressRetailer address;
+	
+	@OneToMany(mappedBy = "retailer", cascade = CascadeType.ALL)
+	List<Product> products;
+	
 	public List<Product> getProducts() {
 		return products;
 	}
@@ -36,14 +42,6 @@ public class Retailer {
 	public void setProducts(List<Product> products) {
 		this.products = products;
 	}
-
-	@OneToOne
-	@JoinColumn(name = "address_Id")
-	private AddressRetailer address;
-	
-	@OneToMany(mappedBy = "retailer", cascade = CascadeType.ALL)
-	List<Product> products;
-	
 	
 	public AddressRetailer getAddress() {
 		return address;
