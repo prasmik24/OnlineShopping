@@ -5,8 +5,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import com.lti.model.Cateogary;
-import com.lti.model.Product;
 import com.lti.model.User;
 
 public class UserDao {

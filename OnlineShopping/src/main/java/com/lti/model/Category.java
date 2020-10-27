@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="tbl_cateogary")
-public class Cateogary {
+public class Category {
 	
 	//Category misspelt as Cateogary
 	

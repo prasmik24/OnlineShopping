@@ -26,7 +26,7 @@ public class Product {
 	
 	@ManyToOne
 	@JoinColumn(name="cateogary_id")
-	Cateogary cateogary;
+	Category cateogary;
 	
 	@ManyToOne
 	@JoinColumn(name="retailer_id")
@@ -45,7 +45,7 @@ public class Product {
 		return productId;
 	}
 	
-	public Cateogary getCateogary() {
+	public Category getCateogary() {
 		return cateogary;
 	}
 
@@ -57,7 +57,7 @@ public class Product {
 		this.productQuantity = productQuantity;
 	}
 
-	public void setCateogary(Cateogary cateogary) {
+	public void setCateogary(Category cateogary) {
 		this.cateogary = cateogary;
 	}
 

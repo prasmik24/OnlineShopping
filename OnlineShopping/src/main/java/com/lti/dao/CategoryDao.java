@@ -5,27 +5,27 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import com.lti.model.Cateogary;
+import com.lti.model.Category;
 
-public class CateogaryDao {
+public class CategoryDao {
 
 	EntityManagerFactory emf;
 	EntityManager em;
 	EntityTransaction tx;
 	
-	public CateogaryDao() {
+	public CategoryDao() {
 		emf = Persistence.createEntityManagerFactory("pu");
 		em = emf.createEntityManager();
 		tx = em.getTransaction();
 	}
 	
-	public void addACateogary(Cateogary cateogary)
+	public void addACateogary(Category cateogary)
 	{
 		tx.begin();
 		em.merge(cateogary);
 		tx.commit();
 	}
-	public Cateogary findACateogary(int cateogaryID){
-		return em.find(Cateogary.class, cateogaryID);
+	public Category findACateogary(int cateogaryID){
+		return em.find(Category.class, cateogaryID);
 	}
 }
