@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import com.lti.dao.UserDao;
+import com.lti.model.AddressUser;
 import com.lti.model.Cart;
 
 import com.lti.model.User;
@@ -27,6 +28,14 @@ public class UserTest {
 		// cart.setRegisterUser(registerUser);
 		registerUser.setCart(cart);
 
+		AddressUser address=new AddressUser();
+		address.setCity("Kolkata");
+		address.setState("West Bengal");
+		address.setStreet("Saltlake");
+		
+		address.setUser(registerUser);
+		registerUser.setAddress(address);
+		
 		dao.addUserWithCart(registerUser);
 	}
 }
