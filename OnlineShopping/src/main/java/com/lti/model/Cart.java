@@ -1,12 +1,14 @@
 package com.lti.model;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -28,9 +30,19 @@ public class Cart {
 	@OneToOne(mappedBy = "cart", cascade = CascadeType.ALL)
 	Order order;
 
+	@OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
+	List<Item> items;
 	
 	public int getCartID() {
 		return cartID;
+	}
+
+	public List<Item> getItems() {
+		return items;
+	}
+
+	public void setItems(List<Item> items) {
+		this.items = items;
 	}
 
 	public void setCartID(int cartID) {

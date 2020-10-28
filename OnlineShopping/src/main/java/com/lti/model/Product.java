@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
@@ -11,18 +13,26 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="tbl_product")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Product {
 	@Id
 	@SequenceGenerator(name = "productSeq", initialValue = 101, allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "productSeq")
-	
 	int productId;
 	String productName;
 	String productDescription;
 	double productPrice;
 	int productQuantity;
 	String productManufacturerName;
+	String imageUrl;
 	
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 	@ManyToOne
 	@JoinColumn(name="category_id")
 	Category category;
