@@ -23,10 +23,10 @@ public class ProductDao {
 		tx = em.getTransaction();
 	}
 	
-	public void addAProductWithCateogary(Product product)
+	public void addAProductWithCateogary(Category category)
 	{
 		tx.begin();
-		em.merge(product);
+		em.merge(category);
 		tx.commit();
 	}
 	
