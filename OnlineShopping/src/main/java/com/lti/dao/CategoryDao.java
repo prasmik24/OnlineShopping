@@ -35,7 +35,6 @@ public class CategoryDao {
 	public List<Category> viewAllCategories(){
 		String jpql= "select c from Category c";
 		TypedQuery<Category> query = em.createQuery(jpql, Category.class);
-		
 		return query.getResultList();
 	}
 }

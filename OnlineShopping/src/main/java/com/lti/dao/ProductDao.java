@@ -35,6 +35,7 @@ public class ProductDao {
 		return em.find(Product.class, productId);
 	}
 	
+	
 	public List<Product> viewAllProducts(){
 		String jpql= "select p from Product p";
 		TypedQuery<Product> query = em.createQuery(jpql, Product.class);
