@@ -20,7 +20,7 @@ public class Cart {
 	@Id
 	@SequenceGenerator(name = "cartSeq", initialValue = 1001, allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cartSeq")
-	int cartID;
+	int cartId;
 	
 	
 	@OneToOne
@@ -33,8 +33,8 @@ public class Cart {
 	@OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
 	List<Item> items;
 	
-	public int getCartID() {
-		return cartID;
+	public int getCartId() {
+		return cartId;
 	}
 
 	public List<Item> getItems() {
@@ -45,8 +45,8 @@ public class Cart {
 		this.items = items;
 	}
 
-	public void setCartID(int cartID) {
-		this.cartID = cartID;
+	public void setCartId(int cartId) {
+		this.cartId = cartId;
 	}
 
 	public User getUser() {

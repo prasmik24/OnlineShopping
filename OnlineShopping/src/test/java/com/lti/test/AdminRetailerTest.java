@@ -6,15 +6,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.lti.dao.AdminRetailerDao;
+import com.lti.dao.AdminRetailerDaoImpl;
 import com.lti.model.AddressRetailer;
 import com.lti.model.Admin;
 import com.lti.model.Retailer;
 
 public class AdminRetailerTest {
 	
-	AdminRetailerDao dao = new AdminRetailerDao();
+	AdminRetailerDaoImpl dao = new AdminRetailerDaoImpl();
+//	ApplicationContext context=new ClassPathXmlApplicationContext("spring-context.xml");
+//	TestController controller=context.getBean(TestController.class);
 
 	@Test
 	public void addOrUpdateRetailer() {
@@ -28,6 +32,10 @@ public class AdminRetailerTest {
 		address.setStreet("MG Road");
 		address.setRetailer(retail);
 		retail.setAddress(address);
+		
+//		Admin admin=new Admin();
+//		admin.setAdminName("King");
+//		admin.setAdminEmail("king@gmail.com");
 		
 		dao.addOrUpdateRetailer(retail);
 		
