@@ -1,9 +1,9 @@
-package com.lti.dao;
+package com.lti.service;
 
 import com.lti.model.Order;
 import com.lti.model.User;
 
-public interface UserDao {
+public interface UserService {
 
 	public int updateUser(User user);
 	public User findUser(int userId);

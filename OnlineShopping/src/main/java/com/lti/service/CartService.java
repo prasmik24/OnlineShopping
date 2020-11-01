@@ -1,8 +1,8 @@
-package com.lti.dao;
+package com.lti.service;
 
 import com.lti.model.Cart;
 
-public interface CartDao {
+public interface CartService {
 
 	public int addItemsToCart(Cart cart);
 	public int emptyCart(Cart cart);

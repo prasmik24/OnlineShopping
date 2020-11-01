@@ -26,14 +26,15 @@ public class CartDaoImpl implements CartDao {
 	}
 	
 	@Transactional
-	public void emptyCart(Cart cart) {
-		String jpql ="delete i from items i where i.cart_id=:cartid";
+	public int emptyCart(Cart cart) {
+		String jpql ="delete i from Item i where i.cart.cart_id=:cartid";
 		Query query = em.createQuery(jpql);
-		
+		query.setParameter("cartid", cart.getCartId());
 		int num = query.executeUpdate();
 		
 		if(num>0) {
 			System.out.println("Cart is emptied");
 		}
+		return num;
 	}
 }
