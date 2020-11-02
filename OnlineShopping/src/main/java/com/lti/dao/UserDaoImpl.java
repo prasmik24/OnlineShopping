@@ -38,7 +38,7 @@ public class UserDaoImpl implements UserDao {
 	public boolean loginUser(String userEmail, String password)
 	{
 		String jpql="select count(u) from User u where u.userEmail=:uemail and u.userPassword=:upwd";
-		Query query=em.createQuery(jpql, User.class);
+		Query query=em.createQuery(jpql, Long.class);
 		query.setParameter("uemail", userEmail);
 		query.setParameter("upwd", password);
 		if(Integer.parseInt(query.getSingleResult().toString())>0) {
