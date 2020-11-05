@@ -12,4 +12,5 @@ public interface UserService {
 	public int addUserWithCart(User user, String fromEmail, String fromPassword) throws IOException;
 	public boolean loginUser(String userEmail, String password);
 	public long placeOrder(Order order);
+	
 }

@@ -25,7 +25,7 @@ import com.lti.model.User;
 
 @Service
 public class UserServiceImpl implements UserService {
-
+	
 	@Autowired
 	UserDao userDao;
 
