@@ -11,12 +11,6 @@ import com.lti.service.UserService;
 
 @Controller
 public class UserController {
-
-	/* Make a file "myFile.txt" and set its path in userService.buildEmailContent.
-	 * This file will be used for fetching email body content.
-	 * Give sender email address and sender email password when adding user with
-	 * controller.addUserWithCart(_,_,_) method. Give valid mail address for each
-	 * user added.*/
 	
 	@Autowired
 	UserService userService;
